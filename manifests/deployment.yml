@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: suvankarnodeapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suvankarnodeapp
+  template:
+    metadata:
+      labels:
+        app: suvankarnodeapp 
+    spec:
+      containers:
+        - name: suvankarnodeapp 
+          image: mycontainerregistry1108.azurecr.io/suvankarnodeapp
+          ports:
+          - containerPort: 8080
